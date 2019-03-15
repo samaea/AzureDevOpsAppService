@@ -3,9 +3,6 @@ CI and CD with Azure DevOps - Quickstart
 
 In this lab we have an application called PartsUnlimited. We want to set up Continuous Integration (CI) and Continuous Deployment (CD) with Azure DevOps (formerly Visual Studio Team Services (VSTS)). Continuous Integration builds the app and runs unit tests whenever code is pushed to the master branch. After the CI step succeeds it will trigger a deployment to a `dev` deployment slot. The `staging` slot and `production` will require an approver before the app is deployed into them. Once the approver confirms that `staging` slot is stable, the app will be deployed to the production site.
 
-### DevOps MPP Course Source
-
-*   This lab is used in course [DevOps200.1x: DevOps Practices and Principles](https://www.edx.org/course/introduction-devops-practices-microsoft-devops200-1x-0) - Module 3.
 
 ### Pre-requisites:
 
