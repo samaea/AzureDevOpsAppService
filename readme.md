@@ -142,7 +142,7 @@ Before we create a release pipeline, we will need to create a connection between
     
     ![](./assets/cicdquickstart-jan2018/buildpipeline1a.png)
     
-2.  Select "use the visual designer".
+2.  Click on the hyperlink **use the visual designer**
 
     ![](./assets/cicdquickstart-jan2018/buildpipeline2b.png)
 
