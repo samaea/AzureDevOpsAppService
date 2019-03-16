@@ -31,7 +31,9 @@ In this lab we have an application called PartsUnlimited. We want to set up Cont
 
 In order to use VSTS Build, your VSTS must contain source code for the application. For this lab we are using the VSTS Git project. The next couple of steps will allow you to add the PartsUnlimited source to the Git master repository.
 
-1.  If you haven’t already, go to [http://visualstudio.com](http://www.visualstudio.com) and create a new team project in your Azure DevOps (formerly Visual Studio Team Services (VSTS)) account that uses Git for source control. Click on **New**, enter project name, select **git** for **Version control** and click on **Create project** button.
+1.  If you haven’t already, go to [http://visualstudio.com](http://www.visualstudio.com) and create a new team project in your Azure DevOps (formerly Visual Studio Team Services (VSTS)) account that uses Git for source control. Click on **New**, enter project name, select **git** for **Version control** and click on **Create project** button. 
+
+    * **Note**: If you have been provided with Lab credentials, please use those to login to Azure DevOps and the Azure Portal, where you will need to complete the initial setup, which will then take you directly to the new project DevOps page.
     
     ![](./assets/cicdquickstart-jan2018/shot1a.png) ![](./assets/cicdquickstart-jan2018/shot2a.png) ![](./assets/cicdquickstart-jan2018/shot2b.png)
     
