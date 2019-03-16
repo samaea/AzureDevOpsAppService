@@ -113,30 +113,26 @@ The steps we outline below will be based on a Windows installation but you could
 
 ### Task 3: Setting up Service Connection in Azure DevOps
 
-There are a number of ways to deploy [ARM Templates](https://azure.microsoft.com/en-us/documentation/articles/resource-group-authoring-templates/) to Azure from Azure DevOps. You can specify your Azure subscription directly in the release pipeline task, or you can use and organizational account or a **Service Principal** and configure a **Service connection** in Azure DevOps using those details.
+Before we create a release pipeline, we will need to create a connection between Azure DevOps and our environments within Azure. This will then allow us to deploy our release pipeline into our resources over in Azure. 
 
-For this lab, we will use a **Service Principal** and add those details to a **Service connection** in Azure DevOps. There are many ways to create a Service Principal (SP) in Azure,
+   
+1.  Click on the Project settings cog
 
-*   Use [Azure PowerShell to create SP](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authenticate-service-principal)
-*   using [Azure Portal to create SP](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal)
-*   using [Azure CLI 2.0 Portal to create SP](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)
+    ![](./assets/cicdquickstart-jan2018/AzureDevOps-projectsettings.png)
     
-    We will use the **Azure CLI 2.0** and you can refer to the link above for more specifics if needed.
+2.  Click on Service connections and the on Azure Resource Manager
     
-
-1.  Install the **Azure CLI 2.0** if it is not already installed by following the steps [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) based on your environment.
+    ![](./assets/cicdquickstart-jan2018/AzureDevOps-serviceconns.png)        
     
-2.  Once **Azure CLI 2.0** is installed, open Azure CLI 2.0 and log into Azure by running the below command and following the prompts
-    
-         az login
+3.  * Select Service Principal Authentication
+    * Connection Name: AzureConn
+    * Scope Level: Subscription
+    * For subscription, lab users need to select: "Microsoft Azure Internal Consumption". Otherwise, you would use your own Azure subscription.
+    * For Resource group, lab users need to select "PartUnlimited-WebApp-LabUserX-RG" with X being your user number.
+ 
         
     
-3.  Create a SP by running the command, the output should be similar to the screenshot below.
-    
-         az ad sp create-for-rbac --name PU1app --password Pa$$w0rd01
-        
-    
-    ![](./assets/cicdquickstart-jan2018/SPN1.png)
+    ![](./assets/cicdquickstart-jan2018/AzureDevOps-serviceconns-2.png)
     
 4.  Check the permissions on the newly created SP and ensure it has a **RoleDefinitionName**\= **Contributor**, by running the below command
     
@@ -145,33 +141,7 @@ For this lab, we will use a **Service Principal** and add those details to a **S
     
     ![](./assets/cicdquickstart-jan2018/SPN2.png)
     
-5.  Log in with the SP to verify access is working fine by running the below command
-    
-         az login --service-principal -u <APP_ID> --password <PWD> --tenant <TENANT_ID>
-        
-    
-    ![](./assets/cicdquickstart-jan2018/SPN3.png)
-    
-    > **Note**: You will need the below three values from the SP account to be able to successfully create the Service Endpoint in Azure DevOps, you should note them now for use later.
-    
-    *   **Tenant ID**
-    *   **Password (also referred to as Service Principal Key)**
-    *   **User name (also referred to as App ID or Service Principal Client ID)**
-6.  Create an Azure Service Endpoint in Azure DevOps by clicking on **Project settings** icon at the bottom left of the dashboard pane, selecting **Pipelines > Services connections** and then **New Service connection** and selecting **Azure Resource Manager** from the drop down list.
-    
-    ![](./assets/cicdquickstart-jan2018/VSTSCreateSPpage1a.png)
-    
-7.  In the **Add an Azure Resource Manager Service connection** dialogue, click on the link **use the full version of the service connection dialog**
-    
-    ![](./assets/cicdquickstart-jan2018/CrateSPDialogueadvlink1a.png)
-    
-8.  Fill in the fields required as per the information you obtained earlier when creating your SP, click **Verify connection** and ensure you can successfully verify the connection to Azure
-    
-    ![](./assets/cicdquickstart-jan2018/SPVerifyConnection1a.png)
-    
-9.  Click **OK**, and you should now see the new Service connection listed in Azure DevOps
-    
-    ![](./assets/cicdquickstart-jan2018/SPCreated1a.png)
+
     
 
 ### Task 4: Import Continuous Integration Build pipeline definition into Azure DevOps and kick off a build
