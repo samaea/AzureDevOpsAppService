@@ -77,7 +77,7 @@ The steps we outline below will be based on a Windows installation but you could
     
 2.  Once installed, create a local folder where you can place the repo files i.e. **C:\\Repo**
     
-3.  Open **Git cmd** window and go to the folder where you want to place the git Azure Repos files i.e. **C:\\repo** by running the command
+3.  Open **Git cmd** window (e.g. in Windows 10, click on the Start menu and search for the application called Git Bash) and go to the folder where you want to place the git Azure Repos files i.e. **C:\\repo** by running the command
     
          cd C:\Repo
         
@@ -92,7 +92,7 @@ The steps we outline below will be based on a Windows installation but you could
     
     **Note**: In case you have created or modified your repo and are on any other branches, ensure you are on the master branch on your repo. If you have not modified or added to the repo it is fine to just take the default values.
     
-6.  Return to your local git cmd and in the folder where you want to place the repo run the command
+6.  Return to your local git cmd and in the folder where you want to place the repo run the command. If you are prompted with crendentials, please use the same one you used to login to Azure DevOps. For Lab users, please continue to use the lab credentials throughout.
     
          git clone <the copied URL for your Azure DevOps repo>
         
