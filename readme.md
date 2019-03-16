@@ -113,14 +113,14 @@ The steps we outline below will be based on a Windows installation but you could
 
 ### Task 3: Setting up Service Connection in Azure DevOps
 
-Before we create a release pipeline, we will need to create a connection between Azure DevOps and our environments within Azure. This will then allow us to deploy our release pipeline into our resources over in Azure. 
+Before we create a release pipeline, we will need to create a connection between Azure DevOps and our environment within Azure. This will then allow us to deploy our release pipeline into our resources over in Azure. 
 
    
 1.  Click on the Project settings cog
 
     ![](./assets/cicdquickstart-jan2018/AzureDevOps-projectsettings.png)
     
-2.  Click on Service connections and the on Azure Resource Manager
+2.  Click on Service connections and then on Azure Resource Manager
     
     ![](./assets/cicdquickstart-jan2018/AzureDevOps-serviceconns.png)        
     
@@ -134,14 +134,6 @@ Before we create a release pipeline, we will need to create a connection between
     
     ![](./assets/cicdquickstart-jan2018/AzureDevOps-serviceconns-2.png)
     
-4.  Check the permissions on the newly created SP and ensure it has a **RoleDefinitionName**\= **Contributor**, by running the below command
-    
-         az role assignment list --assignee  <app id from earlier > i.e. 5c0e5186-737c-42ad-881e-16d735ac3dab
-        
-    
-    ![](./assets/cicdquickstart-jan2018/SPN2.png)
-    
-
     
 
 ### Task 4: Import Continuous Integration Build pipeline definition into Azure DevOps and kick off a build
