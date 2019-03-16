@@ -41,14 +41,14 @@ In order to use Build using Azure Pipelines and Azure Repos, you must contain th
     
     ![](./assets/cicdquickstart-jan2018/VSTS_importrepo1a.png)
     
-3.  Obtain the URL to clone by opening a new browser and going to the URL http://www.github.com/microsoft/PartsUnlimited, then clicking the **Clone or Download** button then copying the URL by clicking **Copy to clipboard** until it says **Copied**
+3.  Obtain the URL to clone by opening a new browser and going to the URL http://www.github.com/samaea/PartsUnlimited, then clicking the **Clone or Download** button then copying the URL by clicking **Copy to clipboard** until it says **Copied**
     
     ![](./assets/cicdquickstart-jan2018/VSTS_gitrepourl.png)
     
 4.  Return to Azure DevOps and in the **Import a Git repository** dialogue you opened earlier enter the values
     
     *   Source type = Git
-    *   Clone URL = https://github.com/Microsoft/PartsUnlimited.git
+    *   Clone URL = https://github.com/samaea/PartsUnlimited.git
     
     ![](./assets/cicdquickstart-jan2018/VSTS_importrepo2.png)
     
