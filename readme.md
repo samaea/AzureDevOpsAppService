@@ -142,35 +142,39 @@ Before we create a release pipeline, we will need to create a connection between
     
     ![](./assets/cicdquickstart-jan2018/buildpipeline1a.png)
     
-2.  Click on **New Pipeline** accept the defaults and click **Continue**
+2.  Select "use the visual designer".
+
+    ![](./assets/cicdquickstart-jan2018/buildpipeline2b.png)
+
+3.  Click on **New Pipeline** accept the defaults and click **Continue**
     
     ![](./assets/cicdquickstart-jan2018/buildpipeline2a.png)
     
-3.  In the **Select a template** pane choose **Empty job**
+4.  In the **Select a template** pane choose **Empty job**
     
     ![](./assets/cicdquickstart-jan2018/buildpipeline3a.png)
     
-4.  The click the arrow beside **Save & queue** and choose **Save**, clicking **Save** again in the Save build pipeline dialogue.
+5.  The click the arrow beside **Save & queue** and choose **Save**, clicking **Save** again in the Save build pipeline dialogue.
     
     ![](./assets/cicdquickstart-jan2018/buildpipeline4a.png)
     
-5.  Now click again on **Pipelines > Builds** and click on **\+ New** and choose **Import a pipeline**
+6.  Now click again on **Pipelines > Builds** and click on **\+ New** and choose **Import a pipeline**
     
     ![](./assets/cicdquickstart-jan2018/shot4a.png)
     
-6.  Click on **Browse** and go to your local repo which you created in Task 2, i.e. something like **C:\\Repo\\Parts-Unlimited** then go to the folder **templates\\build definitions** and select the file **PartsUnlimited-CI.json** and click on **Import** button.
+7.  Click on **Browse** and go to your local repo which you created in Task 2, i.e. something like **C:\\Repo\\Parts-Unlimited** then go to the folder **templates\\build definitions** and select the file **PartsUnlimited-CI.json** and click on **Import** button.
     
     ![](./assets/cicdquickstart-jan2018/shot5a.png)
     
-7.  Once the import has done, you will need to update some information. Click on the **Pipeline** heading under **Tasks** and under Agent pool select **Hosted VS2017** in the hosted section. If this is already filled in please select the option with the **VS logo** beside it.
+8.  Once the import has done, you will need to update some information. Click on the **Pipeline** heading under **Tasks** and under Agent pool select **Hosted VS2017** in the hosted section. If this is already filled in please select the option with the **VS logo** beside it.
     
     ![](./assets/cicdquickstart-jan2018/shot8a.png)
     
-8.  Now go to **Get Sources** under **Tasks** and make sure that that the branch that has been selected is `master` and it is using this project.
+9.  Now go to **Get Sources** under **Tasks** and make sure that that the branch that has been selected is `master` and it is using this project.
     
     ![](./assets/cicdquickstart-jan2018/shot7a.png)
     
-9.  Now click **Save & queue**, and **Save & queue** again when prompted. This will kick off a build and you should see a message saying a build has been queued. You can click on the link provided to view the build progress. It should run and complete successfully, it may take up to 10 minutes to complete.
+10.  Now click **Save & queue**, and **Save & queue** again when prompted. This will kick off a build and you should see a message saying a build has been queued. You can click on the link provided to view the build progress. It should run and complete successfully, it may take up to 10 minutes to complete.
     
     ![](./assets/cicdquickstart-jan2018/shot9a.png) ![](./assets/cicdquickstart-jan2018/shot10a.png)
     
