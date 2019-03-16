@@ -103,7 +103,7 @@ The steps we outline below will be based on a Windows installation but you could
     
     ![](./assets/cicdquickstart-jan2018/VSTS_clonerepo4.png)
     
-7.  Go to the local folder and view the files present. You can now modify any of the Azure DevOps repo files locally and push any changes up to the Azure DevOps repo using the git commands, or variations on them.
+7.  Go to the local folder and view the files present. You can now modify any of the Azure DevOps repo files locally and push any changes up to the Azure DevOps repo using the git commands, or variations on them. An easy change that can be made without affecting the application, is by adding or modifying some words in the README file located in the root of the PartsUnlimited folder. Afterwards, in Bash, navigate to the PartsUnlimited folder and then you can run the below bash commands to push your changes:
     
          git add *
          git commit -m "<description of your changes>"
