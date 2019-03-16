@@ -15,21 +15,21 @@ In this lab we have an application called PartsUnlimited. We want to set up Cont
 
 ### Lab Tasks:
 
-*   Import Source Code into your VSTS Account with Git
-*   Create local git repo from your VSTS git repo
-*   Set up Service Endpoint in VSTS
-*   Import Continuous Integration Build Definition into VSTS and kick off a build
-*   Import Continuous Deployment release definition into VSTS
-*   Export Build and Release Definitions from VSTS and commit changes to VSTS repo to kick off CI and CD
+*   Import Source Code into your Azure DevOps Account with Git
+*   Create local git repo from your Azure Repos using a git repo
+*   Set up Service Endpoint in Azure DevOps
+*   Import Continuous Integration Build Definition into Azure Pipelines and kick off a build
+*   Import Continuous Deployment release definition into Azure Pipelines
+*   Export Build and Release Definitions from Azure Pipelines and commit changes to Azure repo to kick off CI and CD
 *   Confirm successful deployment to Azure
 
 ### Estimated Lab Time:
 
 *   approx. 80 minutes
 
-### Task 1: Import Source Code into your VSTS Account with Git
+### Task 1: Import Source Code into your Azure DevOps Account with Git
 
-In order to use VSTS Build, your VSTS must contain source code for the application. For this lab we are using the VSTS Git project. The next couple of steps will allow you to add the PartsUnlimited source to the Git master repository.
+In order to use Build using Azure Pipelines and Azure Repos, you must contain the source code for the application. For this lab we are using a Git project. The next couple of steps will allow you to add the PartsUnlimited source to the Git master repository.
 
 1.  If you haven’t already, go to [http://visualstudio.com](http://www.visualstudio.com) and create a new team project in your Azure DevOps (formerly Visual Studio Team Services (VSTS)) account that uses Git for source control. Click on **New**, enter project name, select **git** for **Version control** and click on **Create project** button. 
 
@@ -45,14 +45,14 @@ In order to use VSTS Build, your VSTS must contain source code for the applicati
     
     ![](./assets/cicdquickstart-jan2018/VSTS_gitrepourl.png)
     
-4.  Return to VSTS and in the **Import a Git repository** dialogue you opened earlier enter the values
+4.  Return to Azure DevOps and in the **Import a Git repository** dialogue you opened earlier enter the values
     
     *   Source type = Git
     *   Clone URL = https://github.com/Microsoft/PartsUnlimited.git
     
     ![](./assets/cicdquickstart-jan2018/VSTS_importrepo2.png)
     
-5.  Wait until the repo is imported and available in VSTS, you’ll see status and success messages, then be able to view the files in VSTS as in the screenshots below.
+5.  Wait until the repo is imported and available in Azure Repos, you’ll see status and success messages, then be able to view the files as in the screenshots below.
     
     Note: You can return and access your project repo files at any time by going to **Code** > **Files**
     
@@ -63,7 +63,7 @@ In order to use VSTS Build, your VSTS must contain source code for the applicati
     Congratulations, your code should now be in Azure DevOps.
     
 
-### Task 2: Create local git repo from your VSTS git repo
+### Task 2: Create local git repo from your Azure Repos
 
 There are a number of ways to create a local git repo and there are a number of tools which you can use.
 
@@ -77,7 +77,7 @@ The steps we outline below will be based on a Windows installation but you could
     
 2.  Once installed, create a local folder where you can place the repo files i.e. **C:\\Repo**
     
-3.  Open **Git cmd** window and go to the folder where you want to place the VSTS git repo files i.e. **C:\\repo** by running the command
+3.  Open **Git cmd** window and go to the folder where you want to place the git Azure Repos files i.e. **C:\\repo** by running the command
     
          cd C:\Repo
         
@@ -94,7 +94,7 @@ The steps we outline below will be based on a Windows installation but you could
     
 6.  Return to your local git cmd and in the folder where you want to place the repo run the command
     
-         git clone <the copied URL for your VSTS repo>
+         git clone <the copied URL for your Azure DevOps repo>
         
     
     ![](./assets/cicdquickstart-jan2018/VSTS_clonerepo3.png)
@@ -103,7 +103,7 @@ The steps we outline below will be based on a Windows installation but you could
     
     ![](./assets/cicdquickstart-jan2018/VSTS_clonerepo4.png)
     
-7.  Go to the local folder and view the files present. You can now modify any of the VSTS repo files locally and push any changes up to the VSTS repo using the git commands, or variations on them.
+7.  Go to the local folder and view the files present. You can now modify any of the Azure DevOps repo files locally and push any changes up to the Azure DevOps repo using the git commands, or variations on them.
     
          git add *
          git commit -m "<description of your changes>"
@@ -111,7 +111,7 @@ The steps we outline below will be based on a Windows installation but you could
         
     
 
-### Task 3: Setting up Service Connection in VSTS
+### Task 3: Setting up Service Connection in Azure DevOps
 
 There are a number of ways to deploy [ARM Templates](https://azure.microsoft.com/en-us/documentation/articles/resource-group-authoring-templates/) to Azure from Azure DevOps. You can specify your Azure subscription directly in the release pipeline task, or you can use and organizational account or a **Service Principal** and configure a **Service connection** in Azure DevOps using those details.
 
@@ -152,7 +152,7 @@ For this lab, we will use a **Service Principal** and add those details to a **S
     
     ![](./assets/cicdquickstart-jan2018/SPN3.png)
     
-    > **Note**: You will need the below three values from the SP account to be able to successfully create the Service Endpoint in VSTS, you should note them now for use later.
+    > **Note**: You will need the below three values from the SP account to be able to successfully create the Service Endpoint in Azure DevOps, you should note them now for use later.
     
     *   **Tenant ID**
     *   **Password (also referred to as Service Principal Key)**
@@ -169,7 +169,7 @@ For this lab, we will use a **Service Principal** and add those details to a **S
     
     ![](./assets/cicdquickstart-jan2018/SPVerifyConnection1a.png)
     
-9.  Click **OK**, and you should now see the new Service connection listed in VSTS
+9.  Click **OK**, and you should now see the new Service connection listed in Azure DevOps
     
     ![](./assets/cicdquickstart-jan2018/SPCreated1a.png)
     
@@ -334,7 +334,7 @@ Now that you have configured build and release pipelines specifically for your r
          git push
         
     
-5.  This uploads commits to the Azure DevOps repository. Go to your Azure DevOps repo and verify the files have been pushed up to the VSTS repo as expected.
+5.  This uploads commits to the Azure DevOps repository. Go to your Azure DevOps repo and verify the files have been pushed up to the Azure DevOps repo as expected.
     
     Congratulations, now you can reuse your templates with other projects or lab tasks if you wish.
     
@@ -368,7 +368,7 @@ The changes you have just committed will trigger a CI build and a deployment to 
     **Note:** In the **Deployment slots** section you can find the **dev** and **staging** slots with their respective URLs.
     
 
-Congratulations on successfully setting up Continuous Integration and Continuous Deployment with VSTS.
+Congratulations on successfully setting up Continuous Integration and Continuous Deployment with Azure DevOps.
 
 ### Summary
 
