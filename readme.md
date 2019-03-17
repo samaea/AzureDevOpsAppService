@@ -22,6 +22,7 @@ In this lab we have an application called PartsUnlimited. We want to set up Cont
 *   Import Continuous Deployment release definition into Azure Pipelines
 *   Export Build and Release Definitions from Azure Pipelines and commit changes to Azure repo to kick off CI and CD
 *   Confirm successful deployment to Azure
+*   (Optional) Make a change to PartsUnlimited website and see it being reflected back into Azure
 
 ### Estimated Lab Time:
 
@@ -325,6 +326,28 @@ The changes you have just committed will trigger a CI build and a deployment to 
     
 
 Congratulations on successfully setting up Continuous Integration and Continuous Deployment with Azure DevOps.
+
+### Task 8: (Optional) Make a change to PartsUnlimited website and see it being reflected back into Azure
+
+This step is optional. If you are interested in making another change to your live website, you can make a change to the homepage.
+
+Upon navigating to the App Service URL (as instructed in Task 7, step 4), you will notice there is an advert stating a 20% off on tires. We will now change this to 40% instead.
+
+   ![](./assets/cicdquickstart-jan2018/AzureDevOps-viewofhomepage.png)
+
+1.  In Azure DevOps, click on Azure Repo -> Files. In the repo, navigate to src/PartsUnlimitedWebsite/Views/Home/Index.cshtml.
+
+2. Click on Edit, on the 30th line, change "20%" to "40%" and click Save.
+
+    ![](./assets/cicdquickstart-jan2018/AzureDevOps-changehomeview.png)
+    
+3. The Build/Release cycle will now execute automatically as you have CI/CD enabled. You can now monitor your build by navigating to Azure Pipelines -> Builds.
+
+    ![](./assets/cicdquickstart-jan2018/AzureDevOps-monitorbuild.png)
+
+4. View the release pipeline and perform the approval process, identical to what was done in Task 7.
+
+5. Once the release was successful, navigating back to the App Service URL to view the change.
 
 ### Summary
 
