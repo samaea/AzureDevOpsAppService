@@ -176,7 +176,8 @@ Before we create a release pipeline, we will need to create a connection between
     
 10.  Now click **Save & queue**, and **Save & queue** again when prompted. This will kick off a build and you should see a message saying a build has been queued. You can click on the link provided to view the build progress. It should run and complete successfully, it may take up to 10 minutes to complete.
     
-    ![](./assets/cicdquickstart-jan2018/shot9a.png) ![](./assets/cicdquickstart-jan2018/shot10a.png)
+   ![](./assets/cicdquickstart-jan2018/shot9a.png)
+   ![](./assets/cicdquickstart-jan2018/shot10a.png)
     
 
 ### Task 5: Import Continuous Deployment release pipeline definition into Azure DevOps and kick off Continuous deployment
@@ -233,7 +234,7 @@ Note: If you already have at least one release definition then skip to step 2, o
     
     ![](./assets/cicdquickstart-jan2018/cdshot4aa.png)
     
-9.  Under the **Azure Deployment: Create or Update Resource Group….** task, you will need to update the **Azure subscription** to the Service connection that you specified earlier in **Task 3** i.e. Azure SP and the **Location**, you can specify the Azure DataCenter nearest to you.This **only** needs to be done in the **Dev** Task, as this task only exists under **Dev**.
+9.  Now go back to **Tasks > Dev** and under the **Azure Deployment: Create or Update Resource Group….** task, you will need to update the **Azure subscription** to the Service connection that you specified earlier in **Task 3** i.e. Azure SP and the **Location**, you can specify the Azure DataCenter nearest to you.This **only** needs to be done in the **Dev** Task, as this task only exists under **Dev**.
     
     ![](./assets/cicdquickstart-jan2018/cdshot4a.png)
     
