@@ -351,7 +351,7 @@ Upon navigating to the App Service URL (as instructed in Task 7, step 4), you wi
 
 6. Well done!
 
-    ![](./assets/cicdquickstart-jan2018/AzureDevOps-changehomeview-2.png)
+    ![](./assets/cicdquickstart-jan2018/AzureDevOps-viewofhomepage-2.png)
 
 ### Summary
 
