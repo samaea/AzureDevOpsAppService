@@ -349,6 +349,10 @@ Upon navigating to the App Service URL (as instructed in Task 7, step 4), you wi
 
 5. Once the release was successful, navigating back to the App Service URL to view the change.
 
+6. Well done!
+
+    ![](./assets/cicdquickstart-jan2018/AzureDevOps-changehomeview-2.png)
+
 ### Summary
 
 In this lab, you have learned how to push new code to Azure DevOps, set up a Git repo, create a Continuous Integration build that runs when new commits are pushed to the master branch and create a Continuous Deployment that deploys an application to environments automatically. This allows you to receive feedback as to whether your changes contain syntactical errors or break existing tests, as well as saving time by automating the deployment process.
