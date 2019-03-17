@@ -240,32 +240,32 @@ Note: If you already have at least one release definition then skip to step 2, o
     
 10.  Under the **Azure App Service Deploy….** task, you will need to update the **Azure subscription** , again to the **service connection** value you created earlier in **Task 3**, and the **Slot**. For Slot you will need to enter the value **Dev**.
     
-    This needs to also be done for the **Staging** task and the value to use there is **Staging** task. It does **not** need to be done for the **Prod** task, as leaving that value blank there means it will deploy to production and not to a slot.
+   This needs to also be done for the **Staging** task and the value to use there is **Staging** task. It does **not** need to be done for the **Prod** task, as leaving that value blank there means it will deploy to production and not to a slot.
     
-    ![](./assets/cicdquickstart-jan2018/cdshot4b.png)
+   ![](./assets/cicdquickstart-jan2018/cdshot4b.png)
     
-    There should now be no more red highlighted section under **Tasks**
+   There should now be no more red highlighted section under **Tasks**
     
 11.  Navigate back to the Pipeline and you will see some **pre-** and **post-** deployment conditions where you need to select the approvers for the **Staging** and **Prod** steps. Add your name as an approver to these.
     
-    ![](./assets/cicdquickstart-jan2018/cdshot5.png)
+   ![](./assets/cicdquickstart-jan2018/cdshot5.png)
     
 12.  Select the **Variables** tab, followed by the **Pipeline variables**. The red highlighted issues here are the two **Password** values. You will need to select the **Lock** icon next to them and type in a new one, you can use the password of **Pa$$w0rd01** if you wish. For the rest of the values although not highlighted in **Red** you **must** change these also to be unique value by adding your initials to the end of them. We are deploying live web services and this is to ensure naming values rae unique as required by the services.See the bullet notes below when determining the values required.
     
-    ![](./assets/cicdquickstart-jan2018/cdshot6a.png)
+   ![](./assets/cicdquickstart-jan2018/cdshot6a.png)
     
-    **Note**: You just need to add your initials to the end of the current values, but you should be aware of the following in case it is needed.
+   **Note**: You just need to add your initials to the end of the current values, but you should be aware of the following in case it is needed.
     
-    *   The parameter values need to adhere to requirements for the Azure resource they are deploying. If they do not meet those requirements you may receive an error when deploying.
-    *   In general, if you try to make all values unique, lowercase and between the resource character limits, i.e. if you stay under 24 characters you should be fine.
-    *   You should also **not** have an **underscore** or **dash** in the name, as during deployment some resources and object names are generated and will append names with other values with dashes and underscores, and as a result may give errors if used
+   *   The parameter values need to adhere to requirements for the Azure resource they are deploying. If they do not meet those requirements you may receive an error when deploying.
+   *   In general, if you try to make all values unique, lowercase and between the resource character limits, i.e. if you stay under 24 characters you should be fine.
+   *   You should also **not** have an **underscore** or **dash** in the name, as during deployment some resources and object names are generated and will append names with other values with dashes and underscores, and as a result may give errors if used
 13.  All errors should now have been addressed. Prior to this the **Save** option was not available, it was greyed out. However, now that there are no errors present, you can click **Save** to save the release.
     
-    **Note**: If you had to define an empty release definition before, then it can be now deleted by clicking on the dropdown arrow next to the empty definition and selecting **Delete** if you wish to do so.
+   **Note**: If you had to define an empty release definition before, then it can be now deleted by clicking on the dropdown arrow next to the empty definition and selecting **Delete** if you wish to do so.
     
-    ![](./assets/cicdquickstart-jan2018/17a.png)
+   ![](./assets/cicdquickstart-jan2018/17a.png)
     
-    Congratulations, you have imported a release definition successfully.
+   Congratulations, you have imported a release definition successfully.
     
 
 ### Task 6: Export Build and Release Pipeline definitions from Azure DevOps
