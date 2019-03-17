@@ -194,29 +194,18 @@ Note: If you already have at least one release definition then skip to step 2, o
     
     ![](./assets/cicdquickstart-jan2018/cdshot1a.png)
     
-3.  Click on **Browse** and select `Deployment.json` file in `templates\release definitions` of your local repository. Then click on **Import** button.
+3.  Click on **Browse** and select `PartsUnlimited.json.json` file in `templates\release definitions` of your local repository. Then click on **Import** button.
     
     ![](./assets/cicdquickstart-jan2018/cdshot2a.png)
+   
     
-4.  Firstly, you need to check on that the artifact has been found and utilized properly. First select **Part-Unlimited-CI-Import** within **Artifacts**.
-    
-    ![](./assets/cicdquickstart-jan2018/AT01.png)
-    
-    **Note:** If at the bottom of the artifact it states that there is `No version available`. You will need to delete and add a new one.
-    
-    ![](./assets/cicdquickstart-jan2018/AT02.png)
-    
-    or if there is a message similar to this, you will also need to delete it and create a new one.
-    
-    ![](./assets/cicdquickstart-jan2018/VSTS_reldef1.png)
-    
-5.  Click **\+ Add an artifact** ![](./assets/cicdquickstart-jan2018/AT03.png)
+4.  Click **\+ Add an artifact** ![](./assets/cicdquickstart-jan2018/AT03.png)
     
     and in the Add an artifact dialogue, select **Source Type** as **Build**, and then specify your the **Project** i.e. `Parts-Unlimted`, and specify the **Source** as your imported build pipeline i.e. `Parts-Unlimited-CI-import`, the **Source alias** will auto populate, and click **Add**
     
     ![](./assets/cicdquickstart-jan2018/AT04a.png)
     
-6.  Make sure that the **Continuous deployment trigger** is enabled, by selecting the lightning bolt to the top right of the artifact.
+5.  Make sure that the **Continuous deployment trigger** is enabled, by selecting the lightning bolt to the top right of the artifact.
     
     ![](./assets/cicdquickstart-jan2018/AT05a.png)
     
@@ -224,21 +213,21 @@ Note: If you already have at least one release definition then skip to step 2, o
     
     ![](./assets/cicdquickstart-jan2018/AT06a.png)
     
-7.  Everything that needs your attention will be listed in red.
+6.  Everything that needs your attention will be listed in red.
     
     ![](./assets/cicdquickstart-jan2018/cdshot3a.png)
     
-8.  Go to **Tasks > Dev**, or click on **1 job, 2 tasks** in the pipeline graphical display, and select the **Agent Phase** you will see that **Agent pool** is in red. Select the **Hosted VS2017** option.
+7.  Go to **Tasks > Dev**, or click on **1 job, 2 tasks** in the pipeline graphical display, and select the **Agent Phase** you will see that **Agent pool** is in red. Select the **Hosted VS2017** option.
     
     Then complete these steps again for the **Staging** and **Prod** environments. You can access these environments by clicking on the **Tasks > Staging** and **Tasks > Prod** respectively.
     
     ![](./assets/cicdquickstart-jan2018/cdshot4aa.png)
     
-9.  Now go back to **Tasks > Dev** and under the **Azure Deployment: Create or Update Resource Group….** task, you will need to update the **Azure subscription** to the Service connection that you specified earlier in **Task 3** i.e. Azure SP and the **Location**, you can specify the Azure DataCenter nearest to you.This **only** needs to be done in the **Dev** Task, as this task only exists under **Dev**.
+8.  Now go back to **Tasks > Dev** and under the **Azure Deployment: Create or Update Resource Group….** task, you will need to update the **Azure subscription** to the Service connection that you specified earlier in **Task 3** i.e. Azure SP and the **Location**, you can specify the Azure DataCenter nearest to you.This **only** needs to be done in the **Dev** Task, as this task only exists under **Dev**.
     
     ![](./assets/cicdquickstart-jan2018/cdshot4a.png)
     
-10.  Under the **Azure App Service Deploy….** task, you will need to update the **Azure subscription** , again to the **service connection** value you created earlier in **Task 3**, and the **Slot**. For Slot you will need to enter the value **Dev**.
+9.  Under the **Azure App Service Deploy….** task, you will need to update the **Azure subscription** , again to the **service connection** value you created earlier in **Task 3**, and the **Slot**. For Slot you will need to enter the value **Dev**.
     
    This needs to also be done for the **Staging** task and the value to use there is **Staging** task. It does **not** need to be done for the **Prod** task, as leaving that value blank there means it will deploy to production and not to a slot.
     
@@ -246,11 +235,11 @@ Note: If you already have at least one release definition then skip to step 2, o
     
    There should now be no more red highlighted section under **Tasks**
     
-11.  Navigate back to the Pipeline and you will see some **pre-** and **post-** deployment conditions where you need to select the approvers for the **Staging** and **Prod** steps. Add your name as an approver to these.
+10.  Navigate back to the Pipeline and you will see some **pre-** and **post-** deployment conditions where you need to select the approvers for the **Staging** and **Prod** steps. Add your name as an approver to these.
     
    ![](./assets/cicdquickstart-jan2018/cdshot5.png)
     
-12.  Select the **Variables** tab, followed by the **Pipeline variables**. The red highlighted issues here are the two **Password** values. You will need to select the **Lock** icon next to them and type in a new one, you can use the password of **Pa$$w0rd01** if you wish. For the rest of the values although not highlighted in **Red** you **must** change these also to be unique value by adding your initials to the end of them. We are deploying live web services and this is to ensure naming values rae unique as required by the services.See the bullet notes below when determining the values required.
+11.  Select the **Variables** tab, followed by the **Pipeline variables**. The red highlighted issues here are the two **Password** values. You will need to select the **Lock** icon next to them and type in a new one, you can use the password of **Pa$$w0rd01** if you wish. For the rest of the values although not highlighted in **Red** you **must** change these also to be unique value by adding your initials to the end of them. We are deploying live web services and this is to ensure naming values rae unique as required by the services.See the bullet notes below when determining the values required.
     
    ![](./assets/cicdquickstart-jan2018/cdshot6a.png)
     
@@ -259,7 +248,7 @@ Note: If you already have at least one release definition then skip to step 2, o
    *   The parameter values need to adhere to requirements for the Azure resource they are deploying. If they do not meet those requirements you may receive an error when deploying.
    *   In general, if you try to make all values unique, lowercase and between the resource character limits, i.e. if you stay under 24 characters you should be fine.
    *   You should also **not** have an **underscore** or **dash** in the name, as during deployment some resources and object names are generated and will append names with other values with dashes and underscores, and as a result may give errors if used
-13.  All errors should now have been addressed. Prior to this the **Save** option was not available, it was greyed out. However, now that there are no errors present, you can click **Save** to save the release.
+12.  All errors should now have been addressed. Prior to this the **Save** option was not available, it was greyed out. However, now that there are no errors present, you can click **Save** to save the release.
     
    **Note**: If you had to define an empty release definition before, then it can be now deleted by clicking on the dropdown arrow next to the empty definition and selecting **Delete** if you wish to do so.
     
