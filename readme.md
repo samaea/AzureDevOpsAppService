@@ -32,7 +32,11 @@ In this lab we have an application called PartsUnlimited. We want to set up Cont
 
 In order to use Build using Azure Pipelines and Azure Repos, you must contain the source code for the application. For this lab we are using a Git project. The next couple of steps will allow you to add the PartsUnlimited source to the Git master repository.
 
-1.  If you haven’t already, go to [http://visualstudio.com](http://www.visualstudio.com) and create a new team project in your Azure DevOps (formerly Visual Studio Team Services (VSTS)) account that uses Git for source control. Click on **New**, enter project name, select **git** for **Version control** and click on **Create project** button. 
+1.  Go to [http://visualstudio.com](http://www.visualstudio.com) and under Azure DevOps (formerely VSTS) click on "Get started for free".
+
+    ![](./assets/cicdquickstart-jan2018/shot1a.png) ![](./assets/cicdquickstart-jan2018/AzureDevOps-homepage.png)
+    
+2.  Login (please use the lab credentials if provided) and create a new team project in your Azure DevOps (formerly Visual Studio Team Services (VSTS)) account that uses Git for source control. Click on **New**, enter project name, select **git** for **Version control** and click on **Create project** button. 
 
     * **Note**: If you have been provided with Lab credentials, please use those to login to Azure DevOps, where you will need to complete the initial setup, which will then take you directly to the new project DevOps page. These same credentials will be used to login to the Azure Portal at a later stage.
     
@@ -55,7 +59,7 @@ In order to use Build using Azure Pipelines and Azure Repos, you must contain th
     
 5.  Wait until the repo is imported and available in Azure Repos, you’ll see status and success messages, then be able to view the files as in the screenshots below.
     
-    Note: You can return and access your project repo files at any time by going to **Code** > **Files**
+    Note: You can return and access your project repo files at any time by going to **Repos** > **Files**
     
     ![](./assets/cicdquickstart-jan2018/VSTS_importrepo3.png)
     
@@ -83,7 +87,7 @@ The steps we outline below will be based on a Windows installation but you could
          cd C:\Repo
         
     
-4.  Return to Azure DevOps and in your project go to **Code** > **Files** and then click on **Clone**.
+4.  Return to Azure DevOps and in your project go to **Repos** > **Files** and then click on **Clone**.
     
     ![](./assets/cicdquickstart-jan2018/VSTS_clonerepo1a.png)
     
@@ -174,8 +178,12 @@ Before we create a release pipeline, we will need to create a connection between
 9.  Now go to **Get Sources** under **Tasks** and make sure that that the branch that has been selected is `master` and it is using this project.
     
     ![](./assets/cicdquickstart-jan2018/shot7a.png)
-    
-10.  Now click **Save & queue**, and **Save & queue** again when prompted. This will kick off a build and you should see a message saying a build has been queued. You can click on the link provided to view the build progress. It should run and complete successfully, it may take up to 10 minutes to complete.
+  
+10. Click on **Triggers** and ensure **Enable continous integration** is ticked. Afterwards, change the value of **Branch specification** to **master**.
+
+    ![](./assets/cicdquickstart-jan2018/AzureDevOps-buildtriggerCI.png)
+  
+11.  Now click **Save & queue**, and **Save & queue** again when prompted. This will kick off a build and you should see a message saying a build has been queued. You can click on the link provided to view the build progress. It should run and complete successfully, it may take up to 10 minutes to complete.
     
    ![](./assets/cicdquickstart-jan2018/shot9a.png)
    ![](./assets/cicdquickstart-jan2018/shot10a.png)
@@ -228,19 +236,21 @@ Note: If you already have at least one release definition then skip to step 2, o
     
     ![](./assets/cicdquickstart-jan2018/cdshot4a.png)
     
-9.  Under the **Azure App Service Deploy….** task, you will need to update the **Azure subscription** , again to the **service connection** value you created earlier in **Task 3**, and the **Slot**. For Slot you will need to enter the value **Dev**.
+9.  Under the **Azure App Service Deploy….** task, you will need to update the **Azure subscription** , again to the **service connection** value you created earlier in **Task 3**, and the **Slot**. To show the option of the slot, tick the checkbox **Deploy to Slot or App Service Environment** and enter the value **Dev**.
     
-   This needs to also be done for the **Staging** task and the value to use there is **Staging** task. It does **not** need to be done for the **Prod** task, as leaving that value blank there means it will deploy to production and not to a slot.
+   This needs to also be done for the **Staging** task and the slot value to use there is **Staging** task. It does **not** need to be done for the **Prod** task, as leaving that value blank there means it will deploy to production and not to a slot.
     
    ![](./assets/cicdquickstart-jan2018/cdshot4b.png)
     
    There should now be no more red highlighted section under **Tasks**
     
-10.  Navigate back to the Pipeline and you will see some **pre-** and **post-** deployment conditions where you need to select the approvers for the **Staging** and **Prod** steps. Add your name as an approver to these.
+10.  Navigate back to the Pipeline and you will see some **pre-** and **post-** deployment conditions where you need to select the approvers for the **Staging** and **Prod** steps. Add your name as an approver to these (**for lab users, enter labuserX with X being your lab number**).
     
    ![](./assets/cicdquickstart-jan2018/cdshot5.png)
     
 11.  Select the **Variables** tab, followed by the **Pipeline variables**. The red highlighted issues here are the two **Password** values. You will need to select the **Lock** icon next to them and type in a new one, you can use the password of **Pa$$w0rd01** if you wish. For the rest of the values although not highlighted in **Red** you **must** change these also to be unique value by adding "labuserX" (with X being your lab user number) to the end of them. We are deploying live web services and this is to ensure naming values rae unique as required by the services.See the bullet notes below when determining the values required.
+
+**For Lab users**, please ensure input the name of the preprovisioned Azure resource group, which would be PartsUnlimited-WebApp-LabUser**X**-RG where **X** is your lab user number.
     
    ![](./assets/cicdquickstart-jan2018/cdshot6a.png)
     
@@ -304,6 +314,8 @@ The changes you have just committed will trigger a CI build and a deployment to 
     
     ![](./assets/cicdquickstart-jan2018/releasepipeline1a.png) ![](./assets/cicdquickstart-jan2018/releasepipeline2a.png)
     
+   **Note**: You will not see anything in the release pipeline until the build has completed. You can view the progress of the build by navigating to **Pipelines** -> **Builds**. Upon completion, you will be able to view the deployment under the respective release pipeline. 
+   
 2.  Once the deployment to the **dev** slot is completed, the pre-approver for the **Staging** environment will receive an email notification about the pending deployment to the **staging** slot.
     
 3.  To approve or cancel the request, In the release pipeline progress progress pane, click on the **Approve** or **cancel the deployment** button (circle with diagonal line through it) and choosing it again on the approval pane.
@@ -345,7 +357,7 @@ Upon navigating to the App Service URL (as instructed in Task 7, step 4), you wi
 
     ![](./assets/cicdquickstart-jan2018/AzureDevOps-monitorbuild.png)
 
-4. View the release pipeline and perform the approval process, identical to what was done in Task 7.
+4. Upon completion of the build, view the release pipeline and perform the approval process, identical to what was done in Task 7.
 
 5. Once the release was successful, navigating back to the App Service URL to view the change.
 
