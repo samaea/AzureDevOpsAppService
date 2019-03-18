@@ -35,8 +35,6 @@ In order to use Build using Azure Pipelines and Azure Repos, you must contain th
 1.  Go to [http://visualstudio.com](http://www.visualstudio.com) and under Azure DevOps (formerely VSTS) click on "Get started for free".
 
     ![](./assets/cicdquickstart-jan2018/AzureDevOps-homepage.png)
-
-    ![](./assets/cicdquickstart-jan2018/shot1a.png)
     
 2.  Login (please use the lab credentials if provided) and create a new team project in your Azure DevOps (formerly Visual Studio Team Services (VSTS)) account that uses Git for source control. Click on **New**, enter project name, select **git** for **Version control** and click on **Create project** button. 
 
