@@ -33,6 +33,7 @@ In this lab we have an application called PartsUnlimited. We want to set up Cont
 In order to use Build using Azure Pipelines and Azure Repos, you must contain the source code for the application. For this lab we are using a Git project. The next couple of steps will allow you to add the PartsUnlimited source to the Git master repository.
 
 1.  Go to [http://visualstudio.com](http://www.visualstudio.com) and under Azure DevOps (formerely VSTS) click on "Get started for free".
+
     ![](./assets/cicdquickstart-jan2018/AzureDevOps-homepage.png)
 
     ![](./assets/cicdquickstart-jan2018/shot1a.png)
