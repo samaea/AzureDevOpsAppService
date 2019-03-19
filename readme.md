@@ -353,7 +353,7 @@ Upon navigating to the App Service URL (as instructed in Task 7, step 4), you wi
 
 1.  In Azure DevOps, click on **Repos** > **Files**. In the repo, navigate to src/PartsUnlimitedWebsite/Views/Home/Index.cshtml.
 
-2. Click on Edit, on the 30th line, change "20%" to "40%" and click Save.
+2. Click on **Edit**, on the 30th line, change **"20%"** to **"40%"** and click **Save**.
 
     ![](./assets/cicdquickstart-jan2018/AzureDevOps-changehomeview.png)
     
