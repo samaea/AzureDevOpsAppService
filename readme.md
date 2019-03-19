@@ -42,7 +42,7 @@ In order to use Build using Azure Pipelines and Azure Repos, you must contain th
     
     ![](./assets/cicdquickstart-jan2018/shot1a.png) ![](./assets/cicdquickstart-jan2018/shot2a.png) ![](./assets/cicdquickstart-jan2018/shot2b.png)
     
-2.  Import the PartsUnlimited repo on GitHub by going to **Import a repository** and clicking **Import**
+2.  Import the PartsUnlimited repo on GitHub by going to **Repo** > **Files** and then **Import a repository** and clicking **Import**
     
     ![](./assets/cicdquickstart-jan2018/VSTS_importrepo1a.png)
     
@@ -84,6 +84,7 @@ The steps we outline below will be based on a Windows installation but you could
     
 3.  Open **Git cmd** window (e.g. in Windows 10, click on the Start menu and search for the application called Git Bash) and go to the folder where you want to place the git Azure Repos files i.e. **C:\\repo** by running the command
     
+         mkdir /c/Repo
          cd C:\Repo
         
     
