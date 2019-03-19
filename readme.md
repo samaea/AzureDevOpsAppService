@@ -363,7 +363,7 @@ Upon navigating to the App Service URL (as instructed in Task 7, step 4), you wi
 
 4. Upon completion of the build, view the release pipeline and perform the approval process, identical to what was done in Task 7.
 
-5. Once the release was successful, navigating back to the App Service URL to view the change.
+5. Once the release was successful, navigate back to the App Service URL to view the latest change.
 
 6. Well done!
 
