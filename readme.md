@@ -105,7 +105,7 @@ The steps we outline below will be based on a Windows installation but you could
     
     ![](./assets/cicdquickstart-jan2018/VSTS_clonerepo3.png)
     
-    **Note**: A new folder named with your project name is created in your local repo folder and you will see your files within that folder. i.e. **C:\\Repo\\Parts-Unlimited**
+    **Note**: A new folder named with your project name is created in your local repo folder and you will see your files within that folder. i.e. **C:\\Repo\\PartsUnlimited**
     
     ![](./assets/cicdquickstart-jan2018/VSTS_clonerepo4.png)
     
@@ -275,17 +275,17 @@ Now that you have configured build and release pipelines specifically for your r
 
 1.  Navigate to **Pipelines > Builds**, click on your build pipeline definition i.e. **PartsUnlimited-CI-Import** and then click on the ellipsis **(…)** button next to tab options and select **Export**.
     
-    This will trigger a download of the build definition in your browser in JSON format. Click **Save as** and place this file in the `templates\build definitions` directory of your local repository.i.e. **C:\\Repo\\Parts-Unlimited\\templates\\build definitions**, you can append your initials to it if you like or overwrite it, and verify it downloads successfully.
+    This will trigger a download of the build definition in your browser in JSON format. Click **Save as** and place this file in the `templates\build definitions` directory of your local repository.i.e. **C:\\Repo\\PartsUnlimited\\templates\\build definitions**, you can append your initials to it if you like or overwrite it, and verify it downloads successfully.
     
     ![](./assets/cicdquickstart-jan2018/ex1a.png)
     
 2.  Navigate to **Pipelines > Releases** and click on the **elipsis** option beside your release pipeline, i.e. Deployment and select **Export**.
     
-    This will trigger a download of the release definition in JSON format. Click **Save as** and place this file in the `templates\release definitions` directory of your local repository.i.e. **C:\\Repo\\Parts-Unlimited\\templates\\release definitions**, you can append your initials to it if you like or overwrite it, and verify it downloads successfully.
+    This will trigger a download of the release definition in JSON format. Click **Save as** and place this file in the `templates\release definitions` directory of your local repository.i.e. **C:\\Repo\\PartsUnlimited\\templates\\release definitions**, you can append your initials to it if you like or overwrite it, and verify it downloads successfully.
     
     ![](./assets/cicdquickstart-jan2018/ex2a.png)
     
-3.  Open the git cmd window and go to your local repo location i.e. **C:\\Repo\\Parts-Unlimited**.
+3.  Open the git cmd window and go to your local repo location i.e. **C:\\Repo\\PartsUnlimited**.
     
 4.  Commit your changes using the following commands:
     
