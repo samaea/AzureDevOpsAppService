@@ -249,7 +249,7 @@ Note: If you already have at least one release definition then skip to step 2, o
     
    ![](./assets/cicdquickstart-jan2018/cdshot5.png)
     
-11.  Select the **Variables** tab, followed by the **Pipeline variables**. The red highlighted issues here are the two **Password** values. You will need to select the **Lock** icon next to them and type in a new one, you can use the password of **Pa$$w0rd01** if you wish. For the rest of the values although not highlighted in **Red** you **must** change these also to be unique value by adding "labuserX" (with X being your lab user number) to the end of them. We are deploying live web services and this is to ensure naming values rae unique as required by the services.See the bullet notes below when determining the values required.
+11.  Select the **Variables** tab, followed by the **Pipeline variables**. The red highlighted issues here are the two **Password** values. You will need to select the **Lock** icon next to them and type in a new one, you can use the password of **Pa$$w0rd01** if you wish. For the rest of the values although not highlighted in **Red** you **must** change these also to be unique value by adding "labuserX" (with X being your lab user number) to the end of them. We are deploying live web services and this is to ensure naming values rae unique as required by the services. See the bullet notes below when determining the values required.
 
 **For Lab users**, please ensure input the name of the preprovisioned Azure resource group, which would be PartsUnlimited-WebApp-LabUser**X**-RG where **X** is your lab user number.
     
