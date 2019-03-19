@@ -291,6 +291,9 @@ Now that you have configured build and release pipelines specifically for your r
     
          git add .
         
+    Identifies who is making the commit (change **X** to your lab user number)
+    
+        git config --global user.email "labuserX@samofthings.com"
     
     Stages all changes for the next commit
     
