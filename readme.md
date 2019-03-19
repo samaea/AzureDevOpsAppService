@@ -168,7 +168,7 @@ Before we create a release pipeline, we will need to create a connection between
     
     ![](./assets/cicdquickstart-jan2018/shot4a.png)
     
-7.  Click on **Browse** and go to your local repo which you created in Task 2, i.e. something like **C:\\Repo\\Parts-Unlimited** then go to the folder **templates\\build definitions** and select the file **PartsUnlimited-CI.json** and click on **Import** button.
+7.  Click on **Browse** and go to your local repo which you created in Task 2, i.e. something like **C:\\Repo\\PartsUnlimited** then go to the folder **templates\\build definitions** and select the file **PartsUnlimited-CI.json** and click on **Import** button.
     
     ![](./assets/cicdquickstart-jan2018/shot5a.png)
     
