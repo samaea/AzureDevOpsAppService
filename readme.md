@@ -204,7 +204,7 @@ Note: If you already have at least one release definition then skip to step 2, o
     
     ![](./assets/cicdquickstart-jan2018/cdshot1a.png)
     
-3.  Click on **Browse** and select `PartsUnlimited.json.json` file in `templates\release definitions` of your local repository. Then click on **Import** button.
+3.  Click on **Browse** and select `PartsUnlimited.json` file in `templates\release definitions` of your local repository. Then click on **Import** button.
     
     ![](./assets/cicdquickstart-jan2018/cdshot2a.png)
    
