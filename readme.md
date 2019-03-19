@@ -144,7 +144,7 @@ Before we create a release pipeline, we will need to create a connection between
 
 ### Task 4: Import Continuous Integration Build pipeline definition into Azure DevOps and kick off a build
 
-1.  Navigate to the **Pipelines > Builds** and click on _Builds_. There will be a message saying **No build pipelines were found**. We must create a build pipeline, before we have the option to import a build definition.
+1.  Navigate to the **Pipelines > Builds** and click on _New Pipeline_. There will be a message saying **No build pipelines were found**. We must create a build pipeline, before we have the option to import a build definition.
     
     ![](./assets/cicdquickstart-jan2018/buildpipeline1a.png)
     
