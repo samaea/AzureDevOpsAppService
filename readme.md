@@ -345,7 +345,7 @@ Congratulations on successfully setting up Continuous Integration and Continuous
 
 ### Task 8: (Optional) Make a change to PartsUnlimited website and see it being reflected back into Azure
 
-This step is optional. If you are interested in making another change to your live website, you can make a change to the homepage.
+This step is optional. If you are interested in making change to your live website, you can make a change to the homepage.
 
 Upon navigating to the App Service URL (as instructed in Task 7, step 4), you will notice there is an advert stating a 20% off on tires. We will now change this to 40% instead.
 
