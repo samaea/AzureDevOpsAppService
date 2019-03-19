@@ -315,10 +315,10 @@ Now that you have configured build and release pipelines specifically for your r
 The changes you have just committed will trigger a CI build and a deployment to Azure using your release pipeline.
 
 1.  You can view the release pipeline progress by clicking on the release and viewing the pipeline progress, as per the below screenshots.
+
+   **Note**: You will not see anything in the release pipeline until the build has completed. You can view the progress of the build by navigating to **Pipelines** -> **Builds**. Upon completion, you will be able to view the deployment under the respective release pipeline. 
     
     ![](./assets/cicdquickstart-jan2018/releasepipeline1a.png) ![](./assets/cicdquickstart-jan2018/releasepipeline2a.png)
-    
-   **Note**: You will not see anything in the release pipeline until the build has completed. You can view the progress of the build by navigating to **Pipelines** -> **Builds**. Upon completion, you will be able to view the deployment under the respective release pipeline. 
    
 2.  Once the deployment to the **dev** slot is completed, the pre-approver for the **Staging** environment will receive an email notification about the pending deployment to the **staging** slot.
     
